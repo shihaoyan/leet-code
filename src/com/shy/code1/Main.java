@@ -31,7 +31,7 @@ public class Main {
             return null;
         }
         List<Double> result = new ArrayList<>();
-        LinkedList<TreeNode> queue = new LinkedList();
+        LinkedList<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
         while (!queue.isEmpty()) {
