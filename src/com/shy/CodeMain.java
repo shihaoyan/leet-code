@@ -7,6 +7,6 @@ package com.shy;
  */
 public class CodeMain {
     public static void main(String[] args) {
-        // 测试 git
+        // 测试 代码
     }
 }
