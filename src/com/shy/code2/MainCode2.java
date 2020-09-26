@@ -5,7 +5,7 @@ package com.shy.code2;
  * @createDate 2020-09-14 8:15
  * 描述:
  */
-public class Main {
+public class MainCode2 {
     public static void main(String[] args) {
         /*
         -5

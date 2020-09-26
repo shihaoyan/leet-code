@@ -43,12 +43,13 @@ package com.shy.code4;
  * 链接：https://leetcode-cn.com/problems/coloring-a-border
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Main {
+public class MainCode4 {
     public static void main(String[] args) {
 
     }
 
     public static int[][] colorBorder(int[][] grid, int r0, int c0, int color) {
+
 
         return null;
     }

@@ -1,5 +1,7 @@
 package com.shy.code1;
 
+import com.shy.common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -22,8 +24,9 @@ import java.util.List;
  * 链接：https://leetcode-cn.com/problems/average-of-levels-in-binary-tree
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Main {
+public class MainCode1 {
     public static void main(String[] args) {
+
     }
 
     public List<Double> averageOfLevels(TreeNode root) {
@@ -33,6 +36,7 @@ public class Main {
         List<Double> result = new ArrayList<>();
         LinkedList<TreeNode> queue = new LinkedList<>();
         queue.add(root);
+
 
         while (!queue.isEmpty()) {
             int length = queue.size();
@@ -49,6 +53,8 @@ public class Main {
             }
             result.add((sum / length));
         }
+
+
         return result;
     }
 
