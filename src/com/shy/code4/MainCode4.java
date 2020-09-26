@@ -45,7 +45,7 @@ package com.shy.code4;
  */
 public class MainCode4 {
     public static void main(String[] args) {
-        System.out.println("asdasdasdasdad");
+
     }
 
     public static int[][] colorBorder(int[][] grid, int r0, int c0, int color) {
