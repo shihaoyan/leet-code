@@ -21,8 +21,6 @@ public class MainCode5 {
             resaveNum = resaveNum * 10 + x % 10;
             x /= 10;
         }
-
-
         return x == resaveNum || x == resaveNum / 10;
     }
 
