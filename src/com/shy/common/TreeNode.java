@@ -3,7 +3,7 @@ package com.shy.common;
 /**
  * @author 石皓岩
  * @createDate 2020-09-12 21:03
- * 描述:
+ * 描述:通用树形结构
  */
 public class TreeNode {
     public int val;
