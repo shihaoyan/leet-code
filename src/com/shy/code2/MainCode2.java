@@ -3,20 +3,10 @@ package com.shy.code2;
 /**
  * @author 石皓岩
  * @createDate 2020-09-14 8:15
- * 描述:
+ * 描述:矩形面积
  */
 public class MainCode2 {
     public static void main(String[] args) {
-        /*
-        -5
-        -5
-        0
-        3
-        -3
-        -3
-        3
-        3
-         */
         System.out.println(computeArea(-5, -5, 0, 3, -3, -3, 3, 3));
     }
 
