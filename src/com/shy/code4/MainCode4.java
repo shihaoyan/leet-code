@@ -39,10 +39,12 @@ public class MainCode4 {
         while (x != 0) {
             int num = x % 10;
             // 为什么大于7呢，因为int最大值个位数是7  如果num大于7的话，下面就是超过了，所以返回
-            if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && num > 7))
+            if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && num > 7)) {
                 return 0;
-            if (result < Integer.MIN_VALUE / 10 || (result == Integer.MIN_VALUE / 10 && num < -8))
+            }
+            if (result < Integer.MIN_VALUE / 10 || (result == Integer.MIN_VALUE / 10 && num < -8)) {
                 return 0;
+            }
             result = result * 10 + num;
             x = x / 10;
         }
