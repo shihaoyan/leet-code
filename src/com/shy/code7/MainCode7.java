@@ -1,7 +1,5 @@
 package com.shy.code7;
 
-import com.sun.org.apache.xpath.internal.operations.String;
-
 /**
  * @author haoyan.shi
  */
@@ -17,11 +15,9 @@ public class MainCode7 {
 
     public static String longestCommonPrefix(String[] strs) {
 
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < strs.length; i++) {
-
+        if (strs.length == 0) {
+            return "";
         }
-
 
         return null;
     }
