@@ -16,7 +16,6 @@ public class MainCode9 {
 
         /**
          * 递归的方式
-         *
          */
         if (l1 == null) {
             return l2;
@@ -32,7 +31,6 @@ public class MainCode9 {
     }
     /**
      *  迭代的方式
-     *
      */
     private static ListNode getListNode(ListNode l1, ListNode l2) {
         // 定义一个新的链表用来接收数据
