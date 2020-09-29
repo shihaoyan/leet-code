@@ -18,7 +18,9 @@ public class MainCode9 {
         ListNode node1 = l1.next;
         ListNode node2 = l2.next;
         while (node1 != null && node2 != null) {
-            if(node1.val > node2.val){
+            if (node1.val > node2.val) {
+
+            } else {
 
             }
         }
