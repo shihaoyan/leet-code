@@ -13,8 +13,15 @@ public class MainCode9 {
     }
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        // 定义一个新的链表用来接收数据
+        ListNode result = new ListNode();
+        ListNode node1 = l1.next;
+        ListNode node2 = l2.next;
+        while (node1 != null && node2 != null) {
+            if(node1.val > node2.val){
 
-
+            }
+        }
 
         return null;
     }
