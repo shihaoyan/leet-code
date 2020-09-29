@@ -14,6 +14,10 @@ public class MainCode9 {
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
+        /**
+         * 递归的方式
+         *
+         */
         if (l1 == null) {
             return l2;
         } else if (l2 == null) {
@@ -26,7 +30,10 @@ public class MainCode9 {
             return l2;
         }
     }
-
+    /**
+     *  迭代的方式
+     *
+     */
     private static ListNode getListNode(ListNode l1, ListNode l2) {
         // 定义一个新的链表用来接收数据
         ListNode result = new ListNode();
