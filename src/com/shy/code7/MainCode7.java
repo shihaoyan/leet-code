@@ -25,11 +25,11 @@ public class MainCode7 {
                 if (ans.charAt(j) != strs[i].charAt(j)) {
                     break;
                 }
-                ans = ans.substring(0, j);
                 if ("".equals(ans)) {
                     return ans;
                 }
             }
+            ans = ans.substring(0, j);
         }
         return ans;
 
