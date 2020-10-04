@@ -11,6 +11,20 @@ public class MainCode14 {
     }
 
     public static String countAndSay(int n) {
+
+        // 个位数
+        int k = n % 10;
+        // 十位数
+        int j = n / 10;
+
+
+
+
+
+
+
+
+
         return null;
     }
 }
