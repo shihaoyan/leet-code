@@ -17,14 +17,6 @@ public class MainCode14 {
         // 十位数
         int j = n / 10;
 
-
-
-
-
-
-
-
-
         return null;
     }
 }
