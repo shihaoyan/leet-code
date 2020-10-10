@@ -7,7 +7,7 @@ package com.shy.code14;
  */
 public class MainCode14 {
     public static void main(String[] args) {
-        System.out.println(countAndSay(5));
+
     }
 
     /**
