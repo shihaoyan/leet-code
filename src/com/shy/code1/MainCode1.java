@@ -29,8 +29,7 @@ public class MainCode1 {
     public static void main(String[] args) {
 
     }
-
-    public List<Double> averageOfLevels(TreeNode root) {
+    public static List<Double> averageOfLevels(TreeNode root) {
         if (root == null) {
             return null;
         }
