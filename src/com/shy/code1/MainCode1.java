@@ -3,8 +3,14 @@ package com.shy.code1;
 import com.shy.common.TreeNode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author 石皓岩
@@ -26,9 +32,15 @@ import java.util.List;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class MainCode1 {
+
     public static void main(String[] args) {
         List<Double> doubles = averageOfLevels(new TreeNode(1));
         System.out.println(doubles);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("123", null);
+        System.out.println(map);
+
     }
 
     public static List<Double> averageOfLevels(TreeNode root) {
@@ -57,6 +69,40 @@ public class MainCode1 {
 
 
         return result;
+    }
+
+    static class BlockQueue<T> {
+
+        private static final Lock LOCK = new ReentrantLock();
+
+        private static final Condition PROVIDER_CONDITION = LOCK.newCondition();
+
+        private static final Condition CONSUMER_CONDITION = LOCK.newCondition();
+
+        private static final Queue<Object> QUEUE = new LinkedList<>();
+
+        private int size;
+
+
+        BlockQueue(int size) {
+            this.size = size;
+        }
+
+        public void add(Object o) {
+            LOCK.lock();
+            try {
+                while (QUEUE.size() >= size) {
+                    PROVIDER_CONDITION.await();
+                }
+                QUEUE.add(o);
+                CONSUMER_CONDITION.signal();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                LOCK.unlock();
+            }
+        }
+
     }
 
 }
