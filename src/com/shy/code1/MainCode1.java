@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @author 石皓岩
- * @createDate 2020-09-12 21:06
+ * @date 2020-09-12 21:06
  * 描述:二叉树的层平均值
  * 给定一个非空二叉树, 返回一个由每层节点平均值组成的数组。
  * 输入：
@@ -22,13 +22,15 @@ import java.util.List;
  * 第 0 层的平均值是 3 ,  第1层是 14.5 , 第2层是 11 。因此返回 [3, 14.5, 11] 。
  * <p>
  * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/average-of-levels-in-binary-tree
+ * 链接：<a href="https://leetcode-cn.com/problems/average-of-levels-in-binary-tree">...</a>
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class MainCode1 {
     public static void main(String[] args) {
-
+        List<Double> doubles = averageOfLevels(new TreeNode(1));
+        System.out.println(doubles);
     }
+
     public static List<Double> averageOfLevels(TreeNode root) {
         if (root == null) {
             return null;
@@ -36,7 +38,6 @@ public class MainCode1 {
         List<Double> result = new ArrayList<>();
         LinkedList<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-
 
         while (!queue.isEmpty()) {
             int length = queue.size();
