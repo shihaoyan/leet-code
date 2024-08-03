@@ -13,7 +13,7 @@ public class MainCode8 {
 
         // System.out.println(isValid("({{(){}[]}})"));
         MainCode8 mainCode8 = new MainCode8();
-        List<String> abc = mainCode8.permutation("abc");
+        List<String> abc = mainCode8.permutation1("abc");
         // 遍历打印abc
         for (String s : abc) {
             System.out.println(s);
@@ -89,6 +89,42 @@ public class MainCode8 {
                 list.add(i, cur);
             }
         }
+    }
+
+    public List<String> permutation1(String str) {
+
+        if (str == null || str.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        char[] chars = str.toCharArray();
+        List<String> ans = new ArrayList<>();
+        process(chars, 0, ans);
+        return ans;
+    }
+
+    private void process(char[] chars, int index, List<String> ans) {
+
+        if (index == chars.length) {
+            ans.add(new String(chars));
+        } else {
+            boolean[] valid = new boolean[256];
+            for (int i = index; i < chars.length; i++) {
+                if (!valid[chars[i]]) {
+                    valid[chars[i]] = true;
+                    swap(chars, index, i);
+                    process(chars, index + 1, ans);
+                    swap(chars, index, i);
+                }
+            }
+        }
+    }
+
+    private void swap(char[] chars, int index, int i) {
+        // 对于chars数组，交换 index,i的数据
+        char temp = chars[index];
+        chars[index] = chars[i];
+        chars[i] = temp;
     }
 
 
