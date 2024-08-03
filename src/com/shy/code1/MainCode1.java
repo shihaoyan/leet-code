@@ -39,7 +39,11 @@ public class MainCode1 {
 
         Map<String, Object> map = new HashMap<>();
         map.put("123", null);
+        //  执行averageOfLevels(new TreeNode(1));
+
+        
         System.out.println(map);
+
 
     }
 

@@ -1,6 +1,6 @@
 package com.shy.code3;
 
-import java.util.Arrays;
+import com.shy.common.ListNode;
 
 /**
  * @author 石皓岩
@@ -41,23 +41,53 @@ import java.util.Arrays;
  */
 public class MainCode3 {
 
+
+}
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+
     public static void main(String[] args) {
+        ListNode head5 = new ListNode(5, null);
+        ListNode head4 = new ListNode(3, head5);
+        ListNode head3 = new ListNode(3, head4);
+        ListNode head2 = new ListNode(2, head3);
+        ListNode head1 = new ListNode(1, head2);
+        ListNode listNode = removeNthFromEnd(head1, 2);
+        System.out.println(listNode.val);
+
 
     }
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+        if(head == null){
+            return null;
+        }
+        // 创建一个节点给他连起来，防止头被删除
+        ListNode res = new ListNode();
+        res.next = head;
 
-    public static String[] reorderLogFiles(String[] logs) {
-        Arrays.sort(logs, (log1, log2) -> {
-            String[] split1 = log1.split(" ", 2);
-            String[] split2 = log2.split(" ", 2);
-            boolean isDigit1 = Character.isDigit(split1[1].charAt(0));
-            boolean isDigit2 = Character.isDigit(split2[1].charAt(0));
-            if (!isDigit1 && !isDigit2) {
-                int cmp = split1[1].compareTo(split2[1]);
-                if (cmp != 0) return cmp;
-                return split1[0].compareTo(split2[0]);
-            }
-            return isDigit1 ? (isDigit2 ? 0 : 1) : -1;
-        });
-        return logs;
+        // 准备快慢指针，快指针比慢指针先走n+1个位置
+        ListNode n1 = head;
+        ListNode n2 = head;
+        int i = 0;
+        while(i < n && n2.next != null){
+            n2 = n2.next;
+            i++;
+        }
+        while(n2.next != null && n1.next != null){
+            n1 = n1.next;
+            n2 = n2.next;
+        }
+        n1.next = n1.next.next;
+        //  开始删除
+        return res.next;
     }
 }
